@@ -76,11 +76,7 @@ function createWebsocketServer() {
 }
 
 function dumpCurrentClients() {
-	const clientList = clients.map(function (e) {
-		return {
-			since : e.connection_start, ip : e.address
-		};
-	});
+	const clientList = clients.map(e => ({since : e.connection_start, ip : e.address}));
 	console.log(JSON.stringify({clientList : clientList, clientCount : clientList.length}));
 }
 
